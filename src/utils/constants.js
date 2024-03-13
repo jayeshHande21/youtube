@@ -1,8 +1,8 @@
-// import { useSelector } from "react-redux";
 
-export const GOOGLE_API_KEY = "AIzaSyBPS5ctM9X8snqIaWA1hzVScp06p3jetLk";
 
-// const queryParams = useSelector((store)=>store.app.queryParams)
+export const GOOGLE_API_KEY = "AIzaSyCb_joaxwGFTiVKZhk3f7vIUZ6bD6Szaow";
+
+
 
 export const YOUTUBE_VIDEOS_API =
   "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=30&order=viewCount&type=video&videoCategoryId=10&key=" +

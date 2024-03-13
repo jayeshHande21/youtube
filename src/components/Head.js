@@ -5,6 +5,8 @@ import { setQueryParams, toggleMenu } from "../utils/appSlice";
 import { Link } from "react-router-dom";
 import { MENU_LOGO, USER_LOGO, YOUTUBE_LOGO, YOUTUBE_SEARCH_BY_KEYWORD  , GOOGLE_API_KEY} from "../utils/constants";
 import { setVideos } from "../utils/videosSlice";
+import debounce from 'lodash.debounce';
+
 
 
 const Head = () => {
@@ -17,35 +19,24 @@ const Head = () => {
     dispatch(toggleMenu());
   };
 
-  const handleSearch = async ()=>{
-
+  const handleSearch = debounce(async () => {
     try {
-      const data = await fetch( YOUTUBE_SEARCH_BY_KEYWORD +  queryParams + "&type=video&key=" + GOOGLE_API_KEY);
+      const data = await fetch(
+        YOUTUBE_SEARCH_BY_KEYWORD +
+          queryParams +
+          "&type=video&key=" +
+          GOOGLE_API_KEY
+      );
       const response = await data.json();
-      // console.log(response.items)
       dispatch(setVideos(response.items));
-      setQueryParams("")
-    }
-    catch (error){
+      dispatch(setQueryParams(""));
+    } catch (error) {
       console.error("Error fetching data:", error);
     }
-
-  }
+  }, 500);
   
-  // const getSearchSuggesations = async () => {
-    
-  //   // const data = await fetch(YOUTUBE_SEARCH_API + queryParams);
-  //   // const response = await data.json();
-  //   // console.log(response);
- 
-  // };
 
  
-
-
-  // useEffect(() => {
-  //   getSearchSuggesations();
-  // }, [queryParams]);
   return (
     <div className="grid grid-cols-12 p-1 m-1 shadow-md">
       <div className="flex col-span-1 items-center">

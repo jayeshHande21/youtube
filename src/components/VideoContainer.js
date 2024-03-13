@@ -3,7 +3,6 @@ import { YOUTUBE_VIDEOS_API } from "../utils/constants";
 import { useDispatch, useSelector } from "react-redux";
 import { setVideos } from "../utils/videosSlice";
 import VideoCard from "./VideoCard";
-
 import { Link } from "react-router-dom";
 
 const VideoContainer = () => {
@@ -11,19 +10,20 @@ const VideoContainer = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    getData();
-  }, []);
+    const getData = async () => {
+      try {
+        const data = await fetch(YOUTUBE_VIDEOS_API);
+        const response = await data.json();
+        dispatch(setVideos(response.items));
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+// eslint-disable-next-line
+    getData(); // Call getData inside useEffect
+     // eslint-disable-next-line
 
-  const getData = async () => {
-    try {
-      const data = await fetch(YOUTUBE_VIDEOS_API);
-      const response = await data.json();
-
-      dispatch(setVideos(response.items));
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  };
+  }, []); 
 
   return (
     <div className="flex flex-wrap">

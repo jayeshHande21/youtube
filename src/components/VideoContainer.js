@@ -19,11 +19,12 @@ const VideoContainer = () => {
         console.error("Error fetching data:", error);
       }
     };
-// eslint-disable-next-line
+  
     getData(); // Call getData inside useEffect
-     // eslint-disable-next-line
-
-  }, []); 
+  
+    
+  }, [dispatch]);
+  
 
   return (
     <div className="flex flex-wrap">

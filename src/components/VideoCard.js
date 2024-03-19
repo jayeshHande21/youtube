@@ -5,18 +5,37 @@ const VideoCard = ({ info }) => {
     return null;
   }
 
-  const { thumbnails, title, channelTitle } = info.snippet;
+  const { thumbnails, title, channelTitle, publishedAt, statistics } = info.snippet;
+  const publishedDate = publishedAt.split("T")[0];
 
   return (
-    <div className="p-1 m-1 ml-5 max-w-xs  cursor-pointer hover:bg-gray-100 shadow-lg">
+    <div className="p-1 m-1 ml-3 max-w-xs w-full items-center md:w-87 cursor-pointer bg-black rounded-lg shadow-lg"> {/* Adjusted hover background color to a darker shade */}
+      {/* Video thumbnail */}
       <img
-        className="w-full rounded-lg"
+        className="w-full rounded-t-lg"
         src={thumbnails?.medium?.url}
         alt={title}
       />
-      <div className="mt-1">
-        <h3 className="text-sm font-semibold">{title}</h3>
-        <p className="text-sm text-gray-600">{channelTitle}</p>
+      <div className="p-2">
+        <div className="flex items-center">
+          <img
+            className="w-10 h-10 rounded-full mr-2"
+            src={thumbnails?.medium?.url}
+            alt="Profile"
+          />
+          <div>
+            <h3 className="text-sm font-semibold text-white">{title}</h3> {/* Set text color to white */}
+            <p className="text-sm text-gray-400">{channelTitle}</p> {/* Adjusted text color to a lighter shade of gray */}
+          </div>
+        </div>
+
+        <div className="mt-1 ml-12 flex items-center">
+          {/* Video views */}
+          <p className="text-xs text-gray-400">{statistics?.viewCount} views</p> {/* Adjusted text color to a lighter shade of gray */}
+
+          {/* Video post time period */}
+          <p className="text-xs text-gray-400 pl-3">{publishedDate}</p> {/* Adjusted text color to a lighter shade of gray */}
+        </div>
       </div>
     </div>
   );

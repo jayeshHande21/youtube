@@ -79,7 +79,7 @@ const CommentList = ({ comments }) => {
 
 const CommentContainer = () => {
   return (
-    <div className="w-3/4">
+    <div className="w-[700px]">
       <CommentList comments={commentsData} />
     </div>
   );

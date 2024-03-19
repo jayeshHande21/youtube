@@ -12,7 +12,7 @@ function App() {
   return (
     <Provider store={store}>
       <Router>
-        <div className="App">
+        <div className="App bg-black">
           <Head />
           <Routes>
             <Route path="/" element={<Body />}>

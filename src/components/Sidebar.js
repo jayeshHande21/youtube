@@ -28,7 +28,7 @@ const Sidebar = () => {
 
   return (
     <div className="m-1 p-3  w-max-44 bg-black text-white">
-      <div className="mb-4">
+      <div className="mb-4 border-b">
         <h1 className="font-bold text-lg mb-2">Subscriptions</h1>
         <ul>
           <li className="mb-2 flex items-center rounded-lg cursor-pointer p-1   transition duration-300 ">
@@ -47,7 +47,7 @@ const Sidebar = () => {
           </li>
         </ul>
       </div>
-      <div className="mb-4">
+      <div className="mb-4 border-b">
         <h1 className="font-bold text-lg mb-2">
           Explore
         </h1>

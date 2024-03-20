@@ -15,7 +15,7 @@ const SuggesationContainer = () => {
               const data = await fetch(SUGGESTED_VIDEOS);
               const response = await data.json();
               dispatch(setSuggestedVideos(response.items));
-              console.log("videos", SuggesationVideos);
+              
           } catch (error) {
               console.error("Error fetching data:", error);
           }

@@ -8,9 +8,12 @@ import { BiBell } from "react-icons/bi";
 import { MdVideocam } from "react-icons/md";
 import { AiOutlineSearch } from "react-icons/ai";
 
+
 const Head = () => {
   const queryParams = useSelector((store) => store.app.queryParams);
   const dispatch = useDispatch();
+
+ 
 
   const toggleMenuHandler = () => {
     dispatch(toggleMenu());
@@ -42,6 +45,7 @@ const Head = () => {
           alt="Menu Logo"
         />
 
+
         <Link to="/">
           <img
             className="h-16 w-20"
@@ -52,17 +56,21 @@ const Head = () => {
       </div>
 
       <div className="flex col-span-9 justify-center h-8 mt-3">
-        <input
-          className="w-1/2 p-4  rounded-l-full focus:border-blue-900   bg-black text-white"
+      
+         <input
+          className="w-1/2 p-4  rounded-l-full   bg-black text-white"
           type="text"
           placeholder="search here"
           onChange={(e) => dispatch(setQueryParams(e.target.value))}
           value={queryParams}
         />
+       
+        
         <button onClick={() => handleSearch()} className="bg-gray-800 rounded-r-full border border-gray-400 p-2">
           <AiOutlineSearch />
         </button>
       </div>
+     
       <div className="flex col-span-1 items-center">
         <div className="flex mr-3">
           <MdVideocam className="w-6 h-9 mr-3 cursor-pointer" />

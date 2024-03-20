@@ -1,8 +1,10 @@
 import React from "react";
 
 const VideoCard = ({ info }) => {
+   
   if (!info || !info.snippet) {
     return null;
+
   }
 
   const { thumbnails, title, channelTitle, publishedAt, statistics } = info.snippet;

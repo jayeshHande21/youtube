@@ -2,6 +2,11 @@
 
 This is a fully functional YouTube Clone application developed using **React** and **Redux**. The project integrates with the **YouTube API** to provide a seamless browsing experience for trending videos, personalized recommendations, and more.
 
+## Live Demo
+
+Check out the live version of the application here:  
+[YouTube Clone Live Demo](https://reprocast.netlify.app/)
+
 ## Features
 
 - **Dynamic Homepage**: Displays trending videos fetched dynamically from the YouTube API.
@@ -32,3 +37,12 @@ This is a fully functional YouTube Clone application developed using **React** a
    ```bash
    git clone https://github.com/your-username/your-repo-name.git
    cd your-repo-name
+
+
+### Changes Made:
+- Added detailed project description.
+- Highlighted key features and technologies used.
+- Included setup instructions, future enhancements, and contact information.
+- Organized content for better readability.
+
+You can replace placeholders like `your-username` or `your-repo-name` with actual values from your GitHub repository. Let me know if you'd like further customization!
